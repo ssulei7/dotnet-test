@@ -57,6 +57,20 @@
       font-size: 1rem;
       margin: 15px;
     }
+    .valentine-button {
+      background-color: #ee78a4;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .valentine-button:hover {
+      background-color: #ffaac3;
+    }
   </style>
   <link rel="stylesheet" href="confetti.css" />
 </head>
@@ -76,6 +90,7 @@
   <h2>Location</h2>
   <p>We will be having a beautiful dinner in Lincoln Park. As we get closer to the day this page will update with details about our itinerary. </p>
   <div class="confetti-container"></div>
+  <button class="valentine-button" id="playAudioBtn">Play Sound</button>
   <audio id="myAudio" src="sound1.mp3" preload="auto"></audio>
 
   <script>
@@ -107,9 +122,11 @@
         }
       }, 3000);
 
-      // Play sound
+      // Play sound on button click
       const audio = document.getElementById('myAudio');
-      audio.play();
+      document.getElementById('playAudioBtn').addEventListener('click', () => {
+        audio.play();
+      });
     });
   </script>
 </body>

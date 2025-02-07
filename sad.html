@@ -74,16 +74,19 @@
   <p>Why would you click this? :(</p>
   <p>If you want to reconsider, click the button below to go back.</p>
   <button class="valentine-button" id="reconsiderBtn">Reconsider</button>
+  <p>Click the button below to hear a sad sound:</p>
+  <button class="valentine-button" id="playAudioBtn">Play Sound</button>
   <audio id="sadAudio" src="sad.mp3" preload="auto"></audio>
 
   <script>
     document.getElementById('reconsiderBtn').addEventListener('click', () => {
       window.location.href = 'index.html';
     });
-  </script>
-  <script>
+
+    document.getElementById('playAudioBtn').addEventListener('click', () => {
       const audio = document.getElementById('sadAudio');
       audio.play();
+    });
   </script>
 </body>
 </html>
