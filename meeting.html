@@ -26,7 +26,20 @@
       height: auto;
       margin: 20px auto;
       display: block;
+      border: 5px solid #ee78a4;
+      border-radius: 20px;
+      animation: heartbeat 1.5s infinite;
     }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        box-shadow: 0 0 10px #ee78a4, 0 0 20px #ee78a4, 0 0 30px #ee78a4, 0 0 40px #ee78a4;
+      }
+      50% {
+        box-shadow: 0 0 20px #ee78a4, 0 0 30px #ee78a4, 0 0 40px #ee78a4, 0 0 50px #ee78a4;
+      }
+    }
+
     h1 {
       color: #e6399b;
       font-size: 1.75rem;

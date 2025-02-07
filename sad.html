@@ -26,7 +26,21 @@
       height: auto;
       margin: 20px auto;
       display: block;
+      border: 5px solid #555;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #555, 0 0 20px #555, 0 0 30px #555;
+      animation: rainyBorder 1.5s infinite;
     }
+
+    @keyframes rainyBorder {
+      0%, 100% {
+        box-shadow: 0 0 10px #555, 0 0 20px #555, 0 0 30px #555;
+      }
+      50% {
+        box-shadow: 0 0 20px #555, 0 0 30px #555, 0 0 40px #555;
+      }
+    }
+
     h1 {
       color: #333;
       font-size: 1.75rem;
@@ -60,8 +74,6 @@
   <p>Why would you click this? :(</p>
   <p>If you want to reconsider, click the button below to go back.</p>
   <button class="valentine-button" id="reconsiderBtn">Reconsider</button>
-  <p>Click the button below to hear a sad sound:</p>
-  <button class="valentine-button" id="playAudioBtn">Play Sound</button>
   <audio id="sadAudio" src="sad.mp3" preload="auto"></audio>
 
   <script>
