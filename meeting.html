@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meeting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom right, #ffe0f0, #ffedf9);
+    }
+    header {
+      background-color: #ffaac3;
+      padding: 20px;
+      color: white;
+      font-size: 1.5rem;
+      text-shadow: 1px 1px #ee78a4;
+    }
+    img {
+      max-width: 80%;
+      max-height: 300px;
+      width: auto;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+    }
+    h1 {
+      color: #e6399b;
+      font-size: 1.75rem;
+      margin-top: 30px;
+      text-shadow: 2px 2px #ffcfe3;
+    }
+    h2 {
+      color: #ff69b4;
+      font-size: 1.5rem;
+      margin-top: 20px;
+      text-shadow: 2px 2px #ffcfe3;
+    }
+    p {
+      color: #333;
+      font-size: 1rem;
+      margin: 15px;
+    }
+  </style>
+  <link rel="stylesheet" href="confetti.css" />
+</head>
+<body>
+  <header>Our Valentine Meeting</header>
+  <img src="./image2.gif" alt="Meeting Image" />
+  <h1>Thank You For Saying Yes!</h1>
+  <p>I am so happy that you agreed to be my Valentine! I can't wait to spend the day with you. I'm so lucky, and blessed to have you in my life. Inshallah for beautiful days ahead, and for many more Valentine's Days to come!</p>
+  <h2>Location</h2>
+  <p>We will be having a beautiful dinner in Lincoln Park. As we get closer to the day this page will update with details about our itinerary. </p>
+  <div class="confetti-container"></div>
+  <audio id="myAudio" src="sound1.mp3" preload="auto"></audio>
+
+  <script>
+    window.addEventListener('load', () => {
+      const confettiContainer = document.querySelector('.confetti-container');
+      const numConfetti = 50; // Reduced number of hearts
+
+      for (let i = 0; i < numConfetti; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+
+        // Alternate between left and right corners
+        if (i % 2 === 0) {
+          confetti.style.left = '10%'; // Left corner
+          confetti.style.transformOrigin = 'bottom left';
+        } else {
+          confetti.style.left = '90%'; // Right corner
+          confetti.style.transformOrigin = 'bottom right';
+        }
+
+        confetti.style.animationDelay = `${Math.random() * 0.5}s`; // Shorter delay
+        confettiContainer.appendChild(confetti);
+      }
+
+      // Remove confetti after 3 seconds
+      setTimeout(() => {
+        if (confettiContainer) {
+          confettiContainer.remove();
+        }
+      }, 3000);
+
+      // Play sound
+      const audio = document.getElementById('myAudio');
+      audio.play();
+    });
+  </script>
+</body>
+</html>
